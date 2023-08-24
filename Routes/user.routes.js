@@ -38,7 +38,7 @@ UserRouter.post("/login",async(req,res)=>{
             {
                 var jwt = require('jsonwebtoken');
                 var token = jwt.sign({name : data[0].name, id : data[0]._id}, "masai");
-                res.status(200).json({message : "Logged in",token:token});
+                res.status(200).json({message : "Logged in",token:token,name:data[0].name});
             }
             
             else
